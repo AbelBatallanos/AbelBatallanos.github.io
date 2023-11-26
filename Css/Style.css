@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600;1,700&display=swap');
+
+:root{
+    --padding-container: 100px 0;
+    --color-title: #0c3a8f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* background-color: black; */
+    padding: var(--padding-container);
+}
+
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+
+.hero__container{
+    max-width: 800px;
+    --padding-container:0;
+    display: grid;
+    /* grid-template-rows: max-content; */  /*este modo no agarra todo el contenido en general*/
+    grid-auto-rows: max-content;        /*En vez que este si modifica a todo el contenido que tiene esta clase */
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+}
+
+/*Aqui crea  un subelemento para usar este Modelo "Clippbad" */
+.hero::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-image: linear-gradient(180deg, #0000008c 0% , #0000008c 100%), url("Imgenes/denise-jans-ZEtE38ybfao-unsplash.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(100% 0, 100% 80%, 50% 95%, 0 80%, 0 0);
+    z-index: -1;
+    
+   
+}
+.hero_Title{
+    font-size: 3rem;
+}
+
+.Navbar{
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Title_Logo{
+    font-weight: 300;
+}
+
+.Nav-Menus{
+    list-style: none;
+}
+
+.Nav__link{
+    margin-left:auto;
+    padding:0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2rem;
+}
+
+.Nav__links{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.hero_paragraph{
+    margin-bottom: 20px;
+}
+
+.cta{
+    background-color: rgb(31, 76, 199);
+    display: inline-block;
+    justify-self: center;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 32px;
+    color: #fff;
+}
+
+.Nav_close{
+    display: var(--show, none) ;
+}
+.Nav_menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.Nav__img{
+    width: 40px;
+    display: block;
+
+}
+
+
+/*MAIN*/
+
+.Cursos{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.Subtitle{
+    font-size: 2.2rem;
+    color: rgb(26, 26, 109);
+    margin-bottom: 20px;
+}
+
+.Info_Cursos{
+    font-size: 1.2rem;
+    color: #06080a;
+    font-weight: 300;
+    margin-bottom: 60px;
+
+}
+/*about*/
+.about__main{
+    display: grid;
+    padding-top: 50px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;
+    overflow:hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__icons{
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon{
+    width: 40px;
+    margin-bottom: 8px;
+}
+
+.about__title{
+    font-size:1.3rem;
+    font-weight:bolder;
+}
+
+.about__paragrah{
+    color: rgb(10, 11, 12);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/*Knowledge*/
+
+.Knowledge{
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), 
+    radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    overflow: hidden;
+    }
+
+.Knowledge__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.Knowledge__paragraph{
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.Knowledge__figure{
+    max-width: 500px;   
+}
+
+.Knowledge__img{
+    display: block;
+    width: 100%;
+
+}
+
+/*price*/
+
+.price{
+    text-align: center;
+}
+
+.price__table{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+
+
+}
+
+.price__element{
+    background-color: #e5e5f7;
+    text-align: center; 
+    border-radius: 8px;
+    width: 340px;
+    padding:40px;
+    --color-plan: #696871;
+    --color-price:#1D293f;
+    --bg-cta:#ffff;
+    --color-cta:#5454D4;
+    --color-items:#696871;
+    
+}
+
+.price__element__best{
+    width: 370px;
+    height: 400px;
+    padding: 60px 40px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ff7143;
+
+    --color-plan: rgb(255 255 255 /75%);
+    --color-price:#ffff;
+    --bg-cta:#9f3919;
+    --color-cta:#ffff;
+    --color-items:#ffff;
+}
+
+.price__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+    
+}
+
+.plan__price{
+    font-size: 2rem;
+    color: var(--color-price);
+    
+}
+
+.plan__items{
+    display: grid;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+    gap: 1em;
+    color: var(--color-items);
+}
+
+.plan__cta{
+    background-color: var(--bg-cta);
+    color: var(--color-cta);
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+/*Testimony*/
+
+.testimony{
+    background-color: #e5e5f7;
+   
+}
+
+.testimony__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;/*la primera column es el tamaño que tendra , la del medio es el sobrante, y la ultima es el tamaño que tendra la columna*/ 
+    gap: 1em;
+    align-items: center;
+   
+}
+
+.testimony__body{
+    display: grid;
+    grid-template-columns:1fr max-content; /*la primera column queremos que sea de una sola fraccion y la Segunda queremos todo el contenido*/ 
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-row: 1/2; /*esto hace que modifiquemos las posiciones de todoe el contenido que tenga esta clase*/
+    grid-column: 2/3; /*Igual*/
+    opacity:0; /*esto hace invisible el contenido*/
+    pointer-events:none; /*para que no se pueda seleccionar o pasar sobre ellos */
+}
+
+.testimony__body--show{
+    pointer-events:  unset;/*esto hace que se vaya a la propiedad original*/
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony__img{
+    width: 250px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: 50% 30%; /*Esto es para que ajuste a la imagen ,, el primero es la posicion orizontal -- el segundo es la posicion "Y" osea vertical*/
+}
+
+.testimony__texts{
+    max-width: 700px;
+}
+
+.testimony__course{
+    background-color: rgb(70, 100, 191);
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+/*Questions*/
+
+.question{
+    text-align: center;
+}
+.question__container{
+    display: grid;
+    gap: 2rem;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.question__padding{
+    padding: 0;
+    transition: padding .3s;
+    border: 1px solid #5454D4;
+    border-radius: 6px;
+}
+
+.question__padding--add{
+    padding-bottom: 30px;
+}
+.question__answer{
+    padding: 0px 30px 0px;
+    overflow: hidden;
+    
+}
+.question__title{
+    display: flex;
+    text-align: center;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-title);
+    justify-content: space-between;
+}
+.question__arrow{
+    width: 25px;
+    height: 25px;  
+    background-color: var(--color-title);
+    border-radius:50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: transform .3s; /*al agregar transform es para especificar a cual daremos una accion con tiempo*/
+}
+
+.question__arrow--rotate{
+    transform: rotate(180deg); /*a este nos referimos */
+}
+.question__show{
+   text-align: left;
+   height: 0;
+   transition: height .3s;
+}
+
+.question__img{
+    display: block;
+}
+
+.questions__copy{
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom:20px ;
+}
+/*Footer*/
+
+.footer{
+    background-color: #1D293F;
+}
+
+.footer__title{
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+}
+
+.footer__title, .footer__newslatter{
+    color: #fff;
+}
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px ;
+}
+
+.nav--footer{
+    padding-bottom: 20px;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+
+}
+.nav__link--footer{
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.footer__inputs{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.footer__input{
+    background-color: #fff;
+    height: 50px;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding-left: 10px;
+    margin-right: 16px;
+    display: block;
+    outline: none;
+    border: none;
+}
+
+.footer__submit{
+    background-color: #2091f9;
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 9px;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.footer__copy{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright{
+    font-weight: 300;
+    color: #fff;
+}
+
+.footer__icons{
+    display: inline-flex;
+   margin-bottom: 30px ;
+}
+
+.footer__img{
+    width: 30px;
+}
+
+/*Media Queris*/
+
+@media (max-width:800px){
+    .Nav_menu{
+        display:inline;
+    }
+
+    .Nav__link--menu{
+        position: fixed;
+        background-color: #06080a;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+    }
+    .Nav__link--show{
+        --show: block;
+        opacity: 1;
+        pointer-events: unset; /*esto hce que vuelva el valor original*/
+    }
+    .Nav_close{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero_Title{
+        font-size: 2.5rem;
+    }
+    .about__main{
+        gap: 2rem;
+    }
+    .about__icons:last-of-type{ /*lo que hace last of type es que agarra al ultimo elemento*/
+        grid-column: 1/-1;
+    }
+    .Knowledge__container{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+    .Knowledge__figure{
+        grid-row: 1/2;
+        justify-self: center;
+    }
+    .testimony__container{
+        grid-template-columns: 30px 1fr 30px;
+        font-size: 20px;
+    }
+    .testimony__body{
+        grid-template-columns: 1fr; /*lo ponemos que sea de 1fr 1 columna*/
+        grid-template-rows: max-content max-content; /* y que la fila este a su max contenido*/
+        gap: 3em;
+        justify-items: center;
+    }
+    .testimony__img{ /*Modificamos la imagen*/
+        width: 200px;
+        height: 200px;
+    }
+    .questions__copy{
+        padding-top: 15px ;
+        width: 100%;
+    }
+    .footer__container{
+        flex-wrap: wrap;
+        /* justify-content: center; */
+    }
+    .nav--footer{
+        width: 100%;
+        justify-items: center;
+    }
+    .nav__link--footer{
+        justify-content: space-evenly;
+        margin: 0;
+        width: 100%;
+    }
+    .footer__form {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .footer__input{
+        flex: 1; /*esto hace que ocupe todo el espacio vacio */
+    }
+}
+
+@media (max-width:600px){
+    .hero_Title{
+        font-size: 1rem;  
+    }
+    .Subtitle{
+        font-size: 1.8rem;
+    }
+    /*2:00:25 / 2:42:55*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
